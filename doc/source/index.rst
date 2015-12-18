@@ -1,9 +1,9 @@
 ============
- git-review
+ git-restack
 ============
 
-``git-review`` is a tool that helps submitting git branches to gerrit
-for review.
+``git-restack`` is a tool that helps edit a series of commits without
+rebasing.
 
 .. toctree::
    :maxdepth: 2

@@ -27,6 +27,7 @@ def run_cmd(*args, **kwargs):
             return os.chdir(kwargs['chdir'])
 
     try:
+        os.environ['EDITOR'] = '/bin/cat'
         proc = subprocess.Popen(args, stdin=subprocess.PIPE,
                                 stdout=subprocess.PIPE,
                                 stderr=subprocess.STDOUT, env=os.environ,

@@ -1,13 +1,13 @@
-Hacking git-review
+Hacking git-restack
 ==================
 
-Development of git-review is managed by OpenStack's Gerrit, which can be
+Development of git-restack is managed by OpenStack's Gerrit, which can be
 found at https://review.openstack.org/
 
 Instructions on submitting patches can be found at
 http://docs.openstack.org/infra/manual/developers.html#development-workflow
 
-git-review should, in general, not depend on a huge number of external
+git-restack should, in general, not depend on a huge number of external
 libraries, so that installing it is a lightweight operation.
 
 OpenStack Style Commandments

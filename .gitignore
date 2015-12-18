@@ -1,6 +1,6 @@
 build
 dist
-git_review.egg-info
+git_restack.egg-info
 MANIFEST
 AUTHORS
 ChangeLog

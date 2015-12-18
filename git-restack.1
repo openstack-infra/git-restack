@@ -1,0 +1,78 @@
+.\" Uses mdoc(7). See `man 7 mdoc` for details about the syntax used here
+.\"
+.Dd December 18th, 2015
+.Dt GIT\-RESTACK 1
+.Sh NAME
+.Nm git\-restack
+.Nd Edit a series of commits without rebasing
+.Sh SYNOPSIS
+.Nm
+.Op Ar branch
+.Nm
+.Fl \-version
+.Sh DESCRIPTION
+.Nm
+performs an interactive git rebase of the current branch based on the
+most recent commit in a target branch.  When maintaining a large patch
+series, it frequently becomes necessary to edit individual patches in
+the series.  Simply rebasing the series on the tip of the remote
+branch has the secondary effect of changing the branch point of the
+series.  In some cases this may be desirable, but in others, such as
+when using a code review system like Gerrit, it makes it difficult to
+examine diffs between different versions of patchsets.
+.Nm
+will allow you to rebase the series without changing the commit the
+series is based on.
+.Pp
+If supplied,
+.Ar branch
+indicates the branch this series is based on.  If it is not present,
+.Nm
+will check git configuration or look for a
+.Pa .gitreview
+file and use the default branch specified there.  If neither is found,
+it defaults to the master branch.
+.Pp
+The following options are available:
+.Bl -tag -width indent
+.It gitreview.branch
+This setting determines the default base branch
+.Sh FILES
+If there is a
+.Pa .gitreview
+file in the project,
+.Nm
+will use it to determine the default base branch.
+The format is similar to the Windows .ini file format:
+.Bd -literal -offset indent
+[gerrit]
+host=\fIhostname\fP
+port=\fITCP port number of gerrit\fP
+project=\fIproject name\fP
+defaultbranch=\fIbranch to work on\fP
+.Ed
+.Pp
+When the same option is provided through FILES and CONFIGURATION, the
+CONFIGURATION value wins.
+.Pp
+.Sh EXAMPLES
+To perform an interactive rebase against the master branch:
+.Pp
+.Bd -literal -offset indent
+$ git\-restack
+.Ed
+.Pp
+To perform an interactive rebase against a branch named
+.Pa stable
+:
+.Pp
+.Bd -literal -offset indent
+$ git\-restack stable
+.Ed
+.Sh BUGS
+Bug reports can be submitted to
+.Lk https://storyboard.openstack.org/#!/project/838
+.Sh AUTHORS
+.Nm
+is maintained by
+.An "The OpenStack project"

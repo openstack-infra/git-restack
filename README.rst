@@ -1,12 +1,12 @@
-git-review
-==========
+git-restack
+===========
 
-A git command for submitting branches to Gerrit
+A git command for editing a series of commits without rebasing.
 
-git-review is a tool that helps submitting git branches to gerrit for
-review.
+git-restack is a tool that performs an interactive git rebase of a
+branch without changing the commit upon which the branch is based.
 
 * Free software: Apache license
-* Documentation: http://docs.openstack.org/infra/git-review/
-* Source: https://git.openstack.org/cgit/openstack-infra/git-review
-* Bugs: https://storyboard.openstack.org/#!/project/719
+* Documentation: http://docs.openstack.org/infra/git-restack/
+* Source: https://git.openstack.org/cgit/openstack-infra/git-restack
+* Bugs: https://storyboard.openstack.org/#!/project/838
